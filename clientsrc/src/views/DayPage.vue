@@ -1,5 +1,8 @@
 <template>
-  <div class="home container">
+  <div v-if="!day.id" class="loading">
+    <h1>...loading</h1>
+  </div>
+  <div v-else class="home container">
     <h1>{{day.date}} - ({{total}})</h1>
     <div v-for="food in foods" :key="food.id">
       <p>{{food.name}} - {{food.cal}}</p>
